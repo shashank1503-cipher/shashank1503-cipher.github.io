@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		WanderLust | Activities
+	</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body
+		{
+			height: 100%;
+  			margin: 0;
+  			font: 400 15px/1.8 "Poppins", sans-serif;
+  			color: #777;
+  			background-image: url('main.jpg');
+  			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			overflow-x: hidden;
+
+
+		}
+		
+		#nav ul{
+			float:center;
+			margin:none;
+			
+			background:transparent;
+		}
+		#nav li {
+			display:inline-block;
+			margin:none;
+			padding:none;
+		}
+		#nav li a,#nav li span{
+			display:inline-block;
+			margin:none;
+			padding:0em 1.5em;
+			text-align:center;
+			font-family:"Poppins";
+			font-weight:600;
+			text-transform:uppercase;
+			line-height:60px;
+			text-decoration:none;
+		}
+		#nav li a{
+			color:#111;
+		}
+		#nav li:hover a,#nav li span{
+			color:white;
+			background:black;
+			border:lpx solid black;
+			text-decoration:none;
+		}
+		#bgImg1
+		{
+			background-image: url('main.jpg');
+			min-height: 100%;
+			height: 700px;
+			width: 100%;
+			position: relative;
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		#caption1 {
+			font-size: 80px;
+  			position: absolute;
+  			left: 0;
+  			top: 25%;
+  			width: 100%;
+  			text-align: center;
+  			color: #000;
+  		}
+  		.card 
+		{
+			min-height: 200px;
+
+			width: 100%;
+			padding: 15px 32px;
+			display: flex;
+			box-shadow: 0 2px 16px rgba(0,0,0,.1);
+			align-items: center;
+		
+			border-radius: 0.8rem;
+			background-color: white;
+			display: none;
+		}
+		#cardImg
+		{
+			min-width: 350px;
+			max-width: 350px;
+			min-height: 200px;
+			max-height: 200px;
+			transform: translateX(-80px);
+			position: relative;
+			box-shadow: .5rem .5rem 3rem 1px rgba(0,0,0,0.05) 
+		}
+		#cardImg img
+		{
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			border-radius: 8px;
+
+		}
+		#cardInfo 
+		{
+			text-align: justify;	
+			font-family: 'Lato',sans-serif;
+			overflow: hidden;
+		}
+		#cardInfo a
+		{
+			border-radius: 4px;
+			background-color: #0a75ad;
+			text-decoration: none;
+			color: white;
+			display: inline-block;
+			padding: 5px 10px;
+			font-size: 24px;
+		}
+		#cardInfo a:hover
+		{
+			color: #0a75ad;
+			background-color: #fff;
+		}
+		#content
+		{
+			display: block;
+  			
+  			color: #000;
+  			background-color:white;
+  			text-align:center;
+  			padding:50px 80px;
+  			text-align: center;
+  			font-family:'Century Gothic';
+		}		
+	</style>
+	<script type="text/javascript">
+		function display() {
+			// body...
+			var query = window.location.search;
+			var quesry = window.location.search;
+			query = query.slice(1);
+			var res = query.split("&");
+			var name = res[0].split("=")[1];
+			name = name.split("+")[0];
+			document.getElementById('name').innerHTML = 'Hello, ' + name;
+			var age =parseInt(res[1].split("=")[1]);
+			var gender = res[2].split("=")[1];
+			var disease = res[3].split("=")[1];
+			var height = res[4].split("=")[1];
+			var swim = res[5].split("=")[1];
+			var weight = parseInt(res[6].split("=")[1]);
+			var dispArr = [0,0,0,0,0,0,0,0];
+			if (disease == "Yes") 
+			{
+				document.getElementById('content').innerHTML = 'Sorry, ' + name + 'you are unhealthy to carry out these activities'
+			} 
+			else 
+			{
+				if(age > 14 && weight < 110 && height == "No")
+				{
+					dispArr[0] = 1;
+				}	
+				if(age > 12 )
+				{
+					dispArr[1] = 1;
+				}
+				if (age > 10 && swim == "Yes")
+				{
+					dispArr[2] = 1;
+				}
+				if(age > 7)
+				{
+					dispArr[3] = 1;
+				}
+				if(age > 14 && weight < 120 && height == "No")
+				{
+					dispArr[4] = 1;
+				}
+				if(age > 18 && weight < 110 && height == "No")
+				{
+					dispArr[5] = 1;
+				}
+				if (age > 5)
+				{
+					dispArr[6] = 1;
+				}
+				
+				dispArr[7] = 1;
+			}
+			for (var i = 0; i < dispArr.length; i++) {
+				if(dispArr[i] == 1)
+				{
+					document.getElementById(i.toString()).style.display = "flex"; 
+				}
+			}
+		}
+	</script>
+</head>
+<body onload="display()">
+<nav id = "nav">
+				<ul>
+					<li class = "active"><a href = "index.html" >Home</a></li>
+					<li><a href = "about.html">About Us</a></li>
+					<li><a href = "act.html">Top Rated Activities</a></li>
+					<li><a href = "disc.html">Discover</a></li>
+				</ul>
+	</nav>
+	<div id = "bgImg1">
+		
+		<div id = "caption1">
+			<span id = "name">
+				
+			</span>
+		</div>
+	</div>
+	<div id = "content">
+		<h1>These are the best suited activities for you</h1>
+		<div class= "card" id = '5'>
+				<div id = "cardImg">
+					<img src="sdive.jpg">
+				</div>
+				<div id = "cardInfo">
+					<h1 id = "heading" style="color: #0a75ad; ">
+						Skydiving
+					</h1>
+					<p id = "text">
+						Skydiving is a thrilling and exciting sport in which the diver jumps from an airplane from a height. Many adventure enthusiasts from all over the world take up sky diving with passion and enjoy falls from altitude.It's once in a life experience that you should have too. 
+					</p>
+					<a href="sdive.html"> Read More</a>
+				</div>
+			</div>
+			<br><br>
+		<div class= "card" id = '0'>
+				<div id = "cardImg">
+					<img src="b.jpg">
+				</div>
+			<div id = "cardInfo">
+					<h1 id = "heading" style="color: #0a75ad; ">
+						Bungy jumping
+					</h1>
+					<p id = "text">
+						If nose-diving through the air like a human yoyo sounds like fun, you're sure to have bungy jumping on your to-do list. Whether you want the ultimate death-defying plunge with your nose skimming the floor or a short-and-sweet drop, there are a range of locations around the world that will help you live out your bungying aspirations. 
+					</p>
+					<a href="bj.html"> Read More</a>
+				</div>
+			</div>
+			<br><br>
+			<div class= "card" id ='4'>
+				<div id = "cardImg">
+					<img src="paragliding1.jpg">
+				</div>
+				<div id = "cardInfo">
+					<h1 id = "heading" style="color: #0a75ad; ">
+						Paragliding
+					</h1>
+					<p id = "text">
+						For an extreme sport that's more tranquil than terrifying, experiencing the feeling of floating in mid-air with a tandem paragliding excursion, harnessing the power of the wind to propel your parachute.
+					</p>
+					<a href="pg.html"> Read More</a>
+				</div>
+			</div>
+			<br><br>
+			<div class= "card" id = '1'>
+				<div id = "cardImg">
+					<img src="Start2.jpg">
+				</div>
+				<div id = "cardInfo">
+					<h1 id = "heading" style="color: #0a75ad; ">
+						River Rafting
+					</h1>
+					<p id = "text">
+						Whether hurtling downstream or navigating treacherous rapids that threaten to overturn your dingy, river rafting is an exhilarating way to get your pulse racing and your clothes soaking. Grab a paddle, hop in an inflatable raft and explore some of the world's most daringly turbulent waters.Just don't forget your life jacket!
+					</p>
+					<a href="rr.html"> Read More</a>
+				</div>
+			</div>
+			<br><br>
+			<div class= "card" id = '2'>
+				<div id = "cardImg">
+					<img src="scuba.jpg">
+				</div>
+				<div id = "cardInfo">
+					<h1 id = "heading" style="color: #0a75ad; ">
+						Scuba Diving
+					</h1>
+					<p id = "text">
+						Enough of land! Ditch the roads and taste some waters this time. Goa party is passe. The upcoming season calls for a dive into the turquoise and deep blue waters.Yes, you guessed it right. We are talking scuba!
+					</p>
+					<a href="sd.html"> Read More</a>
+				</div>
+			</div>
+			<br><br>
+			<div class= "card" id = '3'>
+				<div id = "cardImg">
+					<img src="Star1.jpg">
+				</div>
+				<div id = "cardInfo">
+					<h1 id = "heading" style="color: #0a75ad; ">
+						Trekking
+					</h1>
+					<p id = "text">
+						Treks in India are a great way to enjoy the natural splendour of the country and experience the real thrill of mountains. There are four main areas for trekking in this country, out of which three are located around the Himalayas. These are Himachal Pradesh, Uttarakhand, and Jammu and Kashmir. Some of the most magnificent treks here are the Chadar trek, Roopkund Trek, Stok Kangri Summit, etc. 
+					</p>
+					<a href="trekking.html"> Read More</a>
+				</div>
+			</div>
+			<br><br>
+			<div class= "card" id = '6'>
+				<div id = "cardImg">
+					<img src="skiing.jpg">
+				</div>
+				<div id = "cardInfo">
+					<h1 id = "heading" style="color: #0a75ad; ">
+						Skiing
+					</h1>
+					<p id = "text">
+						Skiing is a recreational activity as well as a competitive sport. The skier attaches long skis, also called runners to specially designed boots and uses them to travel on top of snow. Many types of competitive skiing events are recognized by the International Olympic Committee, and the International Ski Federation. 
+					</p>
+					<a href="skiing.html"> Read More</a>
+				</div>
+			</div>
+			<br><br>
+			<div class= "card" id = '6'>
+				<div id = "cardImg">
+					<img src="safari.jpg">
+				</div>
+				<div id = "cardInfo">
+					<h1 id = "heading" style="color: #0a75ad; ">
+						Safari
+					</h1>
+					<p id = "text">
+						India boasts a range of habitats, and an amazing store of biodiversity. Although poaching is a serious issue, a safari here still offers one of the best chances on earth to get up close with wildlife in the natural habitat. In India, one is constantly surrounded by animals – the Hindu faith worships creatures like the elephant, the monkey, the bull and the peacock. 
+					</p>
+					<a href="safari.html"> Read More</a>
+				</div>
+			</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		WanderLust | Get Started
+	</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body
+		{
+			height: 100%;
+  			margin: 0;
+  			font: 400 15px/1.8 "Poppins", sans-serif;
+  			color: #777;
+  			background-image: url('Start3.jpg');
+  			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+
+		}
+		#nav ul{
+			float:center;
+			margin:none;
+			
+			background:transparent;
+		}
+		#nav li {
+			display:inline-block;
+			margin:none;
+			padding:none;
+		}
+		#nav li a,#nav li span{
+			display:inline-block;
+			margin:none;
+			padding:0em 1.5em;
+			text-align:center;
+			font-family:"Poppins";
+			font-weight:600;
+			text-transform:uppercase;
+			line-height:60px;
+			text-decoration:none;
+		}
+		#nav li a{
+			color:#111;
+		}
+		#nav li:hover a,#nav li span{
+			color:white;
+			background:black;
+			border:lpx solid black;
+			text-decoration:none;
+		}
+
+		#bgImg1
+		{
+			background-image: url('Start3.jpg');
+			min-height: 100%;
+			height: 700px;
+			width: 100%;
+			position: relative;
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;	
+		}
+		#caption1
+		{
+			font-size: 80px;
+  			position: absolute;
+  			left: 0;
+  			top: 30%;
+  			width: 100%;
+  			text-align: left;
+  			padding-left: 50px;
+  			color: #000;
+  		}
+		#container
+		{
+			padding-left: 50px;
+			display: block;
+			color: #000;
+			background-color:white;
+			
+			
+			
+		}
+		#container input{
+			padding:none;
+
+			font-family: "Century Gothic"
+
+		}
+		#container input[type = "text"]{
+			border: none;
+			margin-left:10px;
+			border-bottom:1px solid white;
+			background:transparent;
+			outline:none;
+			color:black;
+			height:40px;
+			font-size:16px;
+			width:25%;
+		}
+		#container input[type="submit"]{
+			border:none;
+			outline:none;
+			background:black;
+			color:white;
+			height:40px;
+			font-family:"futura";
+			font-size:18px;
+			border-radius:20px;
+			
+		}
+		#container input[type= "submit"]:hover{
+			cursor:pointer;
+			background:transparent;
+			color:black;
+			
+		}
+
+	</style>
+
+</head>
+<body>
+	<nav id = "nav">
+				<ul>
+					<li><a href = "index.html" >Home</a></li>
+					<li><a href = "about.html">About Us</a></li>
+					<li><a href = "act.html">Top Rated Activities</a></li>
+					<li><a href = "disc.html">Discover</a></li>
+				</ul>
+	</nav>
+	<div id = "bgImg1">
+		<div id = "caption1">
+			<span>
+				Get Started
+			</span>
+		</div>
+	</div>
+	<div id  = "container">
+    	  <center><h2> Before we start just fill the following form </h2></center>
+	      <form action = "main.html" method="GET">
+	      	<h3></h3>
+	        <p>Name</p>
+	        <input type="text" name="name" placeholder="Enter your name">
+	        <p>Age</p>
+	        <input type="text" name="Age" placeholder="Enter your age">
+	        <p>Gender</p>
+	        <input type="radio" name="gender" value="male">Male 
+	        <input type="radio" name="gender" value="female">Female
+	        <input type="radio" name="gender" value="other">Rather not specify
+	        <p>Do you have any health conditions like heart disorder, epilepsy, high blood pressure, diabetes, or a neurological disorder, or you are pregnant?</p>
+	        <input type="radio" name="Disease" value="Yes">Yes 
+	        <input type="radio" name="Disease" value="No">No
+	        <p>Are you afraid of height</p>
+	        <input type="radio" name="height" value="Yes">Yes 
+	        <input type="radio" name="height" value="No">No
+	        <p>Do you know swimming</p>
+	        <input type="radio" name="swimming" value="Yes">Yes 
+	        <input type="radio" name="swimming" value="No">No
+	        <p>Weight</p>
+	        <input type="text" name="Age" placeholder="Enter your Weight">
+	        <center><input type="submit" name="submit" value="Submit"></center>
+	      </form>
+    </div>
+</body>
+</html>
