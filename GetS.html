@@ -121,6 +121,50 @@
 		}
 
 	</style>
+	<script type="text/javascript">
+		function isEmpty(str) {
+			// body...
+			if (str == "" || str == null)
+			{
+				return true;
+			}
+		}
+
+
+		function fieldCheck(Form) {
+			// body...
+			var name = Form.nameId.value;
+			var age = Form.ageId.value;
+			var health = Form.DiseaseId.value;
+			var swim  = Form.swimId.value;
+			var height = Form.heightId.value;
+			var weight = Form.weightId.value;
+
+			if(isEmpty(name) || isEmpty(age) || isEmpty(health) || isEmpty(swim) || isEmpty(height) || isEmpty(weight))
+			{
+				alert("Please Fill all Required Fields");
+				return false;
+			}
+			else
+			{
+					if(age < 5){
+							alert("You must be older than 5 years  :| ");
+							return false;	
+					}
+					if(weight < 5)
+					{
+						alert("You're extremely underweight");
+						return false;	
+					}
+					else
+					{
+						
+						return true;
+					}
+			}
+
+		}
+	</script>
 
 </head>
 <body>
@@ -141,27 +185,27 @@
 	</div>
 	<div id  = "container">
     	  <center><h2> Before we start just fill the following form </h2></center>
-	      <form action = "main.html" method="GET">
+	      <form action = "main.html" method="GET" onsubmit="return fieldCheck(this)">
 	      	<h3></h3>
 	        <p>Name</p>
-	        <input type="text" name="name" placeholder="Enter your name">
+	        <input type="text" name="name" id = "nameId"placeholder="Enter your name">
 	        <p>Age</p>
-	        <input type="text" name="Age" placeholder="Enter your age">
+	        <input type="text" name="Age" id = "ageId"placeholder="Enter your age">
 	        <p>Gender</p>
-	        <input type="radio" name="gender" value="male">Male 
-	        <input type="radio" name="gender" value="female">Female
-	        <input type="radio" name="gender" value="other">Rather not specify
+	        <input type="radio" name="gender" id = "genderId" value="male">Male 
+	        <input type="radio" name="gender" id = "genderId" value="female">Female
+	        <input type="radio" name="gender" id = "genderId" value="other">Rather not specify
 	        <p>Do you have any health conditions like heart disorder, epilepsy, high blood pressure, diabetes, or a neurological disorder, or you are pregnant?</p>
-	        <input type="radio" name="Disease" value="Yes">Yes 
-	        <input type="radio" name="Disease" value="No">No
+	        <input type="radio" id = "DiseaseId" name="Disease" value="Yes">Yes 
+	        <input type="radio" name="Disease" id = "DiseaseId" value="No">No
 	        <p>Are you afraid of height</p>
-	        <input type="radio" name="height" value="Yes">Yes 
-	        <input type="radio" name="height" value="No">No
+	        <input type="radio" name="height" id = "heightId" value="Yes">Yes 
+	        <input type="radio" name="height" id = "heightId" value="No">No
 	        <p>Do you know swimming</p>
-	        <input type="radio" name="swimming" value="Yes">Yes 
-	        <input type="radio" name="swimming" value="No">No
+	        <input type="radio" name="swimming" id = "swimId" value="Yes">Yes 
+	        <input type="radio" name="swimming" id = "swimId" value="No">No
 	        <p>Weight</p>
-	        <input type="text" name="Age" placeholder="Enter your Weight">
+	        <input type="text" name="weight" id = "weightId" placeholder="Enter your Weight">
 	        <center><input type="submit" name="submit" value="Submit"></center>
 	      </form>
     </div>
